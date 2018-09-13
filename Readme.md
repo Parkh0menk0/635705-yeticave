@@ -1,7 +1,7 @@
 # Личный проект «YetiCave»
 
 * Студент: [Oleg Parkhomenko](https://up.htmlacademy.ru/php/6/user/635705).
-* Наставник: `Неизвестно`.
+* Наставник: [Владислав Малиничев](https://htmlacademy.ru/profile/id415943).
 
 ---
 
