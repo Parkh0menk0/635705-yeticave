@@ -33,6 +33,7 @@ $user_avatar = 'img/user.jpg';
                 ?>
                 <div class="user-menu__image">
                     <img src="img/user.jpg" width="40" height="40" alt="Пользователь">
+                    <?= $user_avatar; ?>
                 </div>
                 <div class="user-menu__logged">
                     <p><?php echo $user_name; ?></p>
