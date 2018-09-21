@@ -22,7 +22,7 @@ $ad_items = array(
 
 function costing($price) {
     $tmp = ceil($price);
-    return $tmp > 1000 ? number_format($tmp, 0, '', ' ') . ' ₽' : $tmp;
+    return $tmp > 1000 ? number_format($tmp, 0, '', ' ') . ' ₽' : $tmp . ' ₽';
 }
 
 ?>
