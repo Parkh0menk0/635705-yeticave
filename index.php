@@ -18,7 +18,13 @@ $ad_items = array(
         array('title' => 'Ботинки для сноуборда DC Mutiny Charocal', 'category' => 'Ботинки', 'cost' => '10999', 'url_item' => 'img/lot-4.jpg'),
         array('title' => 'Куртка для сноуборда DC Mutiny Charocal', 'category' => 'Одежда', 'cost' => '7500', 'url_item' => 'img/lot-5.jpg'),
         array('title' => 'Маска Oakley Canopy', 'category' => 'Разное', 'cost' => '5400', 'url_item' => 'img/lot-6.jpg')
-)
+);
+
+function costing($price) {
+    $tmp = ceil($price);
+    return $tmp > 1000 ? number_format($tmp, 0, '', ' ') . ' ₽' : $tmp;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -95,7 +101,7 @@ $ad_items = array(
                     <div class="lot__state">
                         <div class="lot__rate">
                             <span class="lot__amount">Стартовая цена</span>
-                            <span class="lot__cost"><?php echo $item['cost']; ?><b class="rub">р</b></span>
+                            <span class="lot__cost"><?php echo costing($item['cost']) ?></span>
                         </div>
                         <div class="lot__timer timer">
 
