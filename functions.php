@@ -20,8 +20,5 @@ function include_template($name, $data)
 function lotExistence()
 {
     $sub = strtotime('tomorrow') - time();
-    $days = (int)($sub / (24 * 60 * 60));
-    $hours = (int)(($sub - $days * 24 * 60 * 60) / (60 * 60));
-    $min = (int)(($sub - $days * 24 * 60 * 60 - $hours * 60 * 60) / 60);
-    $sec = $sub - $days * 24 * 60 * 60 - $hours * 60 * 60 - $min * 60;
+    $timeLeft = date('H:i', $sub);
 }
