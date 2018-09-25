@@ -28,7 +28,7 @@
                             <span class="lot__cost"><?php echo costing($item['cost']) ?></span>
                         </div>
                         <div class="lot__timer timer">
-
+                            <?=lotExistence();?>
                         </div>
                     </div>
                 </div>

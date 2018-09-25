@@ -21,4 +21,5 @@ function lotExistence()
 {
     $sub = strtotime('tomorrow') - time();
     $timeLeft = date('H:i', $sub);
+    return $timeLeft;
 }
