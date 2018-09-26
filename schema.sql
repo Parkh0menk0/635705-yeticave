@@ -49,3 +49,6 @@ CREATE TABLE user (
   lot_id INT,
   rate_id INT
 );
+
+CREATE UNIQUE INDEX user_email ON user(email);
+CREATE UNIQUE INDEX name ON user(user_name);
