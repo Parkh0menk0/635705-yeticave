@@ -26,6 +26,8 @@ CREATE TABLE lot (
   category_id INT
 );
 
+CREATE INDEX search_lot ON lot(lot_name);
+
 CREATE TABLE rate (
 --    поля
   id INT AUTO_INCREMENT PRIMARY KEY,
