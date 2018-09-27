@@ -38,7 +38,7 @@ CREATE TABLE rate (
   lot_id INT
 );
 
-CREATE TABLE 'user' (
+CREATE TABLE user (
 --    поля
   id INT AUTO_INCREMENT PRIMARY KEY,
   date_of_registration DATETIME,
