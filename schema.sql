@@ -1,4 +1,4 @@
-CREATE DATABASE giftube
+CREATE DATABASE yeticave
   DEFAULT CHARACTER SET utf8
   DEFAULT COLLATE utf8_general_ci;
 
@@ -38,7 +38,7 @@ CREATE TABLE rate (
   lot_id INT
 );
 
-CREATE TABLE user (
+CREATE TABLE 'user' (
 --    поля
   id INT AUTO_INCREMENT PRIMARY KEY,
   date_of_registration DATETIME,
@@ -46,7 +46,7 @@ CREATE TABLE user (
   user_name CHAR(128),
   password CHAR(64),
   avatar CHAR(128),
-  contacts TEXT
+  contacts TEXT,
 --    связи
   lot_id INT,
   rate_id INT
