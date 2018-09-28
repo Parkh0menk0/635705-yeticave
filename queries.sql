@@ -48,7 +48,7 @@ INSERT INTO lot
       starting_price = 5400,
       picture = "lot-6.jpg";
 
-INSERT INTO rate
+INSERT INTO bets
   SET user_name = "Иван",
       amount = 11500;
 INSERT INTO bets
@@ -73,3 +73,21 @@ INSERT INTO user
   SET email = "warrior07@mail.ru",
       user_name = "Руслан",
       password = "$2y$10$2OxpEH7narYpkOT1H5cApezuzh10tZEEQ2axgFOaKW.55LxIJBgWW";
+
+
+SELECT * FROM category;
+
+SELECT lot_name, starting_price, picture,
+    (select max(amount) from bets where lot_id = lot.id) as price,
+    (select count(*) from bets where lot_id = lot.id) as bets_count,
+    category.category_name
+    FROM lot
+    JOIN category on category_id = category.id
+    WHERE date_of_completion DATETIME > NOW()
+    ORDER BY date_of_creation DESC;
+-- Получить лот по id и название категории, к которой он принадлежит
+SELECT lot_name, category.category_name FROM lot JOIN category ON category_id = category.id WHERE lot.id = 1;
+-- Обновление названия лота по его идентификатору
+UPDATE lot SET lot_name = "Новое название" WHERE id = 1;
+-- Список свежих ставок для лота по идентификатору
+SELECT * FROM bets WHERE lot_id = 1 ORDER BY date_of_creation DESC;

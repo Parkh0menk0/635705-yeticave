@@ -19,9 +19,9 @@ CREATE TABLE lot (
   picture CHAR(128),
   category_id CHAR (128),
   starting_price INT,
-  date_of_creation DATETIME,
-  date_of_completion DATE,
-  rate_step CHAR(128),
+  date_of_creation DATETIME DEFAULT CURRENT_TIMESTAMP,
+  date_of_completion DATETIME,
+  bets_step CHAR(128),
 --    связи
   user_id INT,
   winners_id INT,
@@ -30,12 +30,12 @@ CREATE TABLE lot (
 
 CREATE INDEX search_lot ON lot(lot_name);
 
-CREATE TABLE rate (
+CREATE TABLE bets (
 --    поля
   id INT AUTO_INCREMENT PRIMARY KEY,
   user_name CHAR (128),
   amount INT,
-  ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  date_of_creation DATETIME DEFAULT CURRENT_TIMESTAMP,
 --    связи
   user_id INT,
   lot_id INT
@@ -44,7 +44,7 @@ CREATE TABLE rate (
 CREATE TABLE user (
 --    поля
   id INT AUTO_INCREMENT PRIMARY KEY,
-  date_of_registration DATETIME,
+  date_of_creation DATETIME DEFAULT CURRENT_TIMESTAMP,
   email CHAR(64),
   user_name CHAR(128),
   password CHAR(64),
@@ -52,7 +52,7 @@ CREATE TABLE user (
   contacts TEXT,
 --    связи
   lot_id INT,
-  rate_id INT
+  bets_id INT
 );
 
 CREATE UNIQUE INDEX user_email ON user(email);
