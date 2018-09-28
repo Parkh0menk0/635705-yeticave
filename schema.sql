@@ -7,17 +7,19 @@ USE yeticave;
 CREATE TABLE category (
 --    поля
   id INT AUTO_INCREMENT PRIMARY KEY,
-  category_name CHAR(64)
+  category_name CHAR(64),
+  category_description(128) CHAR(64)
 );
 
 CREATE TABLE lot (
 --    поля
   id INT AUTO_INCREMENT PRIMARY KEY,
-  date_of_creation DATETIME,
   lot_name CHAR(128),
   description TEXT,
   picture CHAR(128),
+  category_id CHAR (128),
   starting_price INT,
+  date_of_creation DATETIME,
   date_of_completion DATE,
   rate_step CHAR(128),
 --    связи
@@ -31,8 +33,9 @@ CREATE INDEX search_lot ON lot(lot_name);
 CREATE TABLE rate (
 --    поля
   id INT AUTO_INCREMENT PRIMARY KEY,
-  date DATETIME,
+  user_name CHAR (128),
   amount INT,
+  ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 --    связи
   user_id INT,
   lot_id INT
