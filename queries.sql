@@ -83,11 +83,11 @@ SELECT lot_name, starting_price, picture,
     category.category_name
     FROM lot
     JOIN category on category_id = category.id
-    WHERE date_of_completion DATETIME > NOW()
+    WHERE date_of_completion IS NULL
     ORDER BY date_of_creation DESC;
--- Получить лот по id и название категории, к которой он принадлежит
+# Получить лот по id и название категории, к которой он принадлежит
 SELECT lot_name, category.category_name FROM lot JOIN category ON category_id = category.id WHERE lot.id = 1;
--- Обновление названия лота по его идентификатору
+# Обновление названия лота по его идентификатору
 UPDATE lot SET lot_name = "Новое название" WHERE id = 1;
--- Список свежих ставок для лота по идентификатору
+# Список свежих ставок для лота по идентификатору
 SELECT * FROM bets WHERE lot_id = 1 ORDER BY date_of_creation DESC;

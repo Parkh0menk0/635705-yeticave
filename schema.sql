@@ -5,24 +5,20 @@ CREATE DATABASE yeticave
 USE yeticave;
 
 CREATE TABLE category (
---    поля
   id INT AUTO_INCREMENT PRIMARY KEY,
   category_name CHAR(64),
-  category_description(128) CHAR(64)
+  category_description CHAR(64)
 );
 
 CREATE TABLE lot (
---    поля
   id INT AUTO_INCREMENT PRIMARY KEY,
   lot_name CHAR(128),
   description TEXT,
   picture CHAR(128),
-  category_id CHAR (128),
   starting_price INT,
   date_of_creation DATETIME DEFAULT CURRENT_TIMESTAMP,
   date_of_completion DATETIME,
   bets_step CHAR(128),
---    связи
   user_id INT,
   winners_id INT,
   category_id INT
@@ -31,18 +27,15 @@ CREATE TABLE lot (
 CREATE INDEX search_lot ON lot(lot_name);
 
 CREATE TABLE bets (
---    поля
   id INT AUTO_INCREMENT PRIMARY KEY,
-  user_name CHAR (128),
+  user_name CHAR(128),
   amount INT,
   date_of_creation DATETIME DEFAULT CURRENT_TIMESTAMP,
---    связи
   user_id INT,
   lot_id INT
 );
 
 CREATE TABLE user (
---    поля
   id INT AUTO_INCREMENT PRIMARY KEY,
   date_of_creation DATETIME DEFAULT CURRENT_TIMESTAMP,
   email CHAR(64),
@@ -50,7 +43,6 @@ CREATE TABLE user (
   password CHAR(64),
   avatar CHAR(128),
   contacts TEXT,
---    связи
   lot_id INT,
   bets_id INT
 );
