@@ -49,4 +49,10 @@ if ($con == false) {
     die();
 }
 
+$lots_datebase = "SELECT lot.id, lot_name, picture, starting_price, date_of_completion, category_name FROM lot
+            JOIN category ON category.id = lot.category_id
+            ORDER BY date_of_creation DESC";
+$lots_datebase_result = mysqli_query($con, $lots_datebase);
+$lots_list = mysqli_fetch_all($lots_datebase_result, MYSQLI_ASSOC);
+
 print($layout_page);
