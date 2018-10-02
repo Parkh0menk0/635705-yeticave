@@ -55,4 +55,8 @@ $lots_datebase = "SELECT lot.id, lot_name, picture, starting_price, date_of_comp
 $lots_datebase_result = mysqli_query($con, $lots_datebase);
 $lots_list = mysqli_fetch_all($lots_datebase_result, MYSQLI_ASSOC);
 
+$category_datebase = "SELECT id, category_name FROM category";
+$category_datebase_result = mysqli_query($con, $category_datebase);
+$category_list = mysqli_fetch_all($category_datebase_result, MYSQLI_ASSOC);
+
 print($layout_page);
