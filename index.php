@@ -44,4 +44,9 @@ $layout_page = include_template('layout.php', [
 $con = mysqli_connect("localhost", "root", "", "yeticave");
 mysqli_set_charset($con, "utf8");
 
+if ($con == false) {
+    print(mysqli_connect_error());
+    die();
+}
+
 print($layout_page);
