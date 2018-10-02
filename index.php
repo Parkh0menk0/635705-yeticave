@@ -41,4 +41,7 @@ $layout_page = include_template('layout.php', [
     'user_avatar' => $user_avatar
 ]);
 
+$con = mysqli_connect("localhost", "root", "", "yeticave");
+mysqli_set_charset($con, "utf8");
+
 print($layout_page);
